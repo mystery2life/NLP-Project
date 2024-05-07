@@ -3,6 +3,8 @@ import os
 
 from skills_extraction import unique_skills
 from skills_extraction import get_skills
+from skills_extraction import get_newskills
+
 
 from ResumeProcess import extract_text_from_pdf
 from ResumeProcess import extract_Identity

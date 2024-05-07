@@ -41,9 +41,21 @@ def get_skills(text):
     myset.append(subset)
     return subset
 
+# Define a valid path for saving the model
+model_dir = R"C:\Users\svars\OneDrive\Desktop\Venkat\final\NLP-Project-main\ModelsV2\saved_modelv2"
+
+# Load the model from the saved directory into a new variable
+newnlp = spacy.load(model_dir)
 
 def unique_skills(x):
     return list(set(x))
+
+def get_newskills(text):
+    doc = newnlp(text)  # Process the text using your customized NER model
+    skills = [ent.text for ent in doc.ents if ent.label_ == "SKILL"]
+    return skills
+
+
 
 
 
